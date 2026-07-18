@@ -12,15 +12,6 @@ import time
 import traceback
 from typing import Dict, Optional, Tuple, Any
 
-# -----------------------------------------------------------------------------
-# CRITICAL PATH FIX - Import from Backhand_code folder
-# -----------------------------------------------------------------------------
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-BACKHAND_CODE_PATH = os.path.join(PROJECT_ROOT, "Backhand_code")
-
-if BACKHAND_CODE_PATH not in sys.path:
-    sys.path.insert(0, BACKHAND_CODE_PATH)
-
 # Core system imports (from Backhand_code folder)
 from config import Config
 from palette import Palette
