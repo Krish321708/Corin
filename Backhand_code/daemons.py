@@ -20,15 +20,15 @@ from typing import Dict, List, Optional, Tuple, Any
 import hashlib
 
 # Core system imports
-from config import Config
-from state import HermesState
-from event_bus import EventBus
-from audio_engine import AudioEngine
-from memory_manager import MemoryManager
-from persona_engine import PersonaEngine
-from github_engine import GitHubEngine
-from social_integrations import SocialIntegrationsManager
-from rss_scraper import RSSScraperEngine
+from Backhand_code.config import Config
+from Backhand_code.state import HermesState
+from Backhand_code.event_bus import EventBus
+from Backhand_code.audio_engine import AudioEngine
+from Backhand_code.memory_manager import MemoryManager
+from Backhand_code.persona_engine import PersonaEngine
+from Backhand_code.github_engine import GitHubEngine
+from Backhand_code.social_integrations import SocialIntegrationsManager
+from Backhand_code.rss_scraper import RSSScraperEngine
 
 # External dependencies
 try:

@@ -13,12 +13,12 @@ from typing import Dict, List, Optional, Tuple, Any, Union
 import json
 
 # Core system imports
-from config import Config
-from palette import Palette
-from state import HermesState
-from event_bus import EventBus
-from math_engine import Vector3, Matrix4x4, PerlinNoise3D, catmull_rom
-from ui_widgets import (FontManager, TextRenderer, GeometricPrimitives, 
+from Backhand_code.config import Config
+from Backhand_code.palette import Palette
+from Backhand_code.state import HermesState
+from Backhand_code.event_bus import EventBus
+from Backhand_code.math_engine import Vector3, Matrix4x4, PerlinNoise3D, catmull_rom
+from Backhand_code.ui_widgets import (FontManager, TextRenderer, GeometricPrimitives, 
                        VoiceOrb, TerminalWidget, BasePanel)
 
 # Pygame imports

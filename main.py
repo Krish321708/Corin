@@ -13,14 +13,14 @@ import traceback
 from typing import Dict, Optional, Tuple, Any
 
 # Core system imports (from Backhand_code folder)
-from config import Config
-from palette import Palette
-from state import HermesState
-from event_bus import EventBus
-from self_test import run_self_tests
-from daemons import DaemonManager
-from ui_widgets import initialize_widgets
-from ui_panels import initialize_panels
+from Backhand_code.config import Config
+from Backhand_code.palette import Palette
+from Backhand_code.state import HermesState
+from Backhand_code.event_bus import EventBus
+from Backhand_code.self_test import run_self_tests
+from Backhand_code.daemons import DaemonManager
+from Backhand_code.ui_widgets import initialize_widgets
+from Backhand_code.ui_panels import initialize_panels
 
 # Pygame imports
 try:

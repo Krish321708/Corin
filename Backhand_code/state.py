@@ -10,7 +10,7 @@ import time
 import threading
 import collections
 from typing import Any, Dict, List, Optional
-from config import (
+from Backhand_code.config import (
     ActiveConfig, UIMode,
     ARCHER_SOUL_PATH, HUDSON_SOUL_PATH, USERS_MD_PATH,
     SESSION_TOKEN_LIMIT, FFT_BANDS,
@@ -1111,7 +1111,7 @@ class HermesState:
         Args:
             line: Text line to append (speaker prefix included by caller).
         """
-        from config import TERMINAL_MAX_HISTORY
+        from Backhand_code.config import TERMINAL_MAX_HISTORY
         with self._lock:
             self._data["terminal_history"].append(line)
             while len(self._data["terminal_history"]) > TERMINAL_MAX_HISTORY:
@@ -1189,7 +1189,7 @@ class HermesState:
         Called by the HardwareMonitor daemon every polling cycle.
         Also pushes values into their respective ring buffers.
         """
-        from math_engine import stability_score as compute_stability
+        from Backhand_code.math_engine import stability_score as compute_stability
         ping_ms    = self._data.get("ping_ms", 0.0)
         net_up     = self._data.get("internet_up", False)
         stability  = compute_stability(
@@ -1246,7 +1246,7 @@ class HermesState:
         Args:
             mode: UIMode constant string ("ARCHER", "HUDSON", or "BOTH").
         """
-        import palette
+        import Backhand_code.palette as palette
         with self._lock:
             self._data["ui_mode"] = mode
         palette.set_mode(mode)

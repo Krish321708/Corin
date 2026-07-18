@@ -11,10 +11,10 @@ from typing import Dict, List, Optional, Tuple, Any, Union
 import threading
 
 # Core system imports
-from config import Config
-from palette import Palette
-from state import HermesState
-from event_bus import EventBus
+from Backhand_code.config import Config
+from Backhand_code.palette import Palette
+from Backhand_code.state import HermesState
+from Backhand_code.event_bus import EventBus
 
 # Pygame imports
 try:

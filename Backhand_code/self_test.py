@@ -124,7 +124,7 @@ def _run_test(name: str, fn) -> TestResult:
 # =============================================================================
 
 def _test_vector3_addition() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v1 = Vector3(1.0, 2.0, 3.0)
     v2 = Vector3(4.0, 5.0, 6.0)
     result = v1 + v2
@@ -134,7 +134,7 @@ def _test_vector3_addition() -> None:
 
 
 def _test_vector3_subtraction() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v1 = Vector3(10.0, 8.0, 6.0)
     v2 = Vector3(3.0,  2.0, 1.0)
     result = v1 - v2
@@ -144,7 +144,7 @@ def _test_vector3_subtraction() -> None:
 
 
 def _test_vector3_scalar_multiply() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v = Vector3(1.0, 2.0, 3.0)
     result = v * 3.0
     assert result.to_tuple() == (3.0, 6.0, 9.0), (
@@ -153,7 +153,7 @@ def _test_vector3_scalar_multiply() -> None:
 
 
 def _test_vector3_scalar_divide() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v = Vector3(6.0, 9.0, 12.0)
     result = v / 3.0
     assert abs(result.x - 2.0) < 1e-9, f"x: {result.x}"
@@ -162,7 +162,7 @@ def _test_vector3_scalar_divide() -> None:
 
 
 def _test_vector3_dot_product() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v1 = Vector3(1.0, 2.0, 3.0)
     v2 = Vector3(4.0, 5.0, 6.0)
     result = v1.dot(v2)
@@ -171,7 +171,7 @@ def _test_vector3_dot_product() -> None:
 
 
 def _test_vector3_cross_product() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     # Cross product of unit X and unit Y must be unit Z
     vx = Vector3(1.0, 0.0, 0.0)
     vy = Vector3(0.0, 1.0, 0.0)
@@ -182,14 +182,14 @@ def _test_vector3_cross_product() -> None:
 
 
 def _test_vector3_magnitude() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     # |3, 4, 0| = 5
     v = Vector3(3.0, 4.0, 0.0)
     assert abs(v.length() - 5.0) < 1e-9, f"Expected 5.0, got {v.length()}"
 
 
 def _test_vector3_normalize() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v = Vector3(3.0, 0.0, 0.0)
     n = v.normalize()
     assert abs(n.x - 1.0) < 1e-9, f"x: {n.x}"
@@ -200,7 +200,7 @@ def _test_vector3_normalize() -> None:
 
 
 def _test_vector3_normalize_zero() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     # Normalizing the zero vector must return zero vector (no crash)
     v = Vector3(0.0, 0.0, 0.0)
     n = v.normalize()
@@ -208,7 +208,7 @@ def _test_vector3_normalize_zero() -> None:
 
 
 def _test_vector3_lerp() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v1 = Vector3(0.0, 0.0, 0.0)
     v2 = Vector3(10.0, 20.0, 30.0)
     mid = v1.lerp(v2, 0.5)
@@ -218,7 +218,7 @@ def _test_vector3_lerp() -> None:
 
 
 def _test_vector3_reflect() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     # Reflecting (1, -1, 0) off normal (0, 1, 0) should give (1, 1, 0)
     incident = Vector3(1.0, -1.0, 0.0)
     normal   = Vector3(0.0,  1.0, 0.0)
@@ -229,7 +229,7 @@ def _test_vector3_reflect() -> None:
 
 
 def _test_vector3_distance() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     # Distance between (0,0,0) and (3,4,0) = 5
     v1 = Vector3(0.0, 0.0, 0.0)
     v2 = Vector3(3.0, 4.0, 0.0)
@@ -239,14 +239,14 @@ def _test_vector3_distance() -> None:
 
 
 def _test_vector3_negation() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v = Vector3(1.0, -2.0, 3.0)
     n = -v
     assert n.to_tuple() == (-1.0, 2.0, -3.0), f"Got {n.to_tuple()}"
 
 
 def _test_vector3_equality() -> None:
-    from math_engine import Vector3
+    from Backhand_code.math_engine import Vector3
     v1 = Vector3(1.0, 2.0, 3.0)
     v2 = Vector3(1.0, 2.0, 3.0)
     v3 = Vector3(1.0, 2.0, 4.0)
@@ -259,7 +259,7 @@ def _test_vector3_equality() -> None:
 # =============================================================================
 
 def _test_matrix_identity_transform() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     identity = Matrix4x4.identity()
     v = Vector3(5.0, -3.0, 7.0)
     result = identity.transform_point(v)
@@ -269,7 +269,7 @@ def _test_matrix_identity_transform() -> None:
 
 
 def _test_matrix_rotation_x_90() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Rotating (0, 1, 0) by 90 degrees around X should give (0, 0, 1)
     rx90   = Matrix4x4.rotation_x(math.pi / 2.0)
     v      = Vector3(0.0, 1.0, 0.0)
@@ -280,7 +280,7 @@ def _test_matrix_rotation_x_90() -> None:
 
 
 def _test_matrix_rotation_y_90() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Rotating (1, 0, 0) by 90 degrees around Y should give (0, 0, -1)
     ry90   = Matrix4x4.rotation_y(math.pi / 2.0)
     v      = Vector3(1.0, 0.0, 0.0)
@@ -291,7 +291,7 @@ def _test_matrix_rotation_y_90() -> None:
 
 
 def _test_matrix_rotation_z_90() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Rotating (1, 0, 0) by 90 degrees around Z should give (0, 1, 0)
     rz90   = Matrix4x4.rotation_z(math.pi / 2.0)
     v      = Vector3(1.0, 0.0, 0.0)
@@ -302,7 +302,7 @@ def _test_matrix_rotation_z_90() -> None:
 
 
 def _test_matrix_translation() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     t = Matrix4x4.translation(10.0, -5.0, 3.0)
     v = Vector3(1.0, 2.0, 3.0)
     result = t.transform_point(v)
@@ -312,7 +312,7 @@ def _test_matrix_translation() -> None:
 
 
 def _test_matrix_scale() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     s = Matrix4x4.scale(2.0, 3.0, 4.0)
     v = Vector3(1.0, 1.0, 1.0)
     result = s.transform_point(v)
@@ -322,7 +322,7 @@ def _test_matrix_scale() -> None:
 
 
 def _test_matrix_multiplication_identity() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # M @ Identity == M
     rx = Matrix4x4.rotation_x(0.5)
     identity = Matrix4x4.identity()
@@ -336,7 +336,7 @@ def _test_matrix_multiplication_identity() -> None:
 
 
 def _test_matrix_combined_rotation() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Two 90-degree X rotations = 180-degree rotation
     # (0, 1, 0) rotated 180° around X = (0, -1, 0)
     rx90  = Matrix4x4.rotation_x(math.pi / 2.0)
@@ -349,7 +349,7 @@ def _test_matrix_combined_rotation() -> None:
 
 
 def _test_matrix_direction_transform_ignores_translation() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Direction transform must ignore translation component
     t = Matrix4x4.translation(100.0, 200.0, 300.0)
     d = Vector3(0.0, 1.0, 0.0)
@@ -361,7 +361,7 @@ def _test_matrix_direction_transform_ignores_translation() -> None:
 
 
 def _test_matrix_rotation_x_360() -> None:
-    from math_engine import Matrix4x4, Vector3
+    from Backhand_code.math_engine import Matrix4x4, Vector3
     # Full 360° rotation must return to original position
     rx360  = Matrix4x4.rotation_x(2.0 * math.pi)
     v      = Vector3(1.0, 2.0, 3.0)
@@ -376,7 +376,7 @@ def _test_matrix_rotation_x_360() -> None:
 # =============================================================================
 
 def _test_perlin_deterministic() -> None:
-    from math_engine import PerlinNoise3D
+    from Backhand_code.math_engine import PerlinNoise3D
     pn = PerlinNoise3D(seed=42)
     n1 = pn.noise(0.5, 0.5, 0.5)
     n2 = pn.noise(0.5, 0.5, 0.5)
@@ -386,7 +386,7 @@ def _test_perlin_deterministic() -> None:
 
 
 def _test_perlin_bounds() -> None:
-    from math_engine import PerlinNoise3D
+    from Backhand_code.math_engine import PerlinNoise3D
     pn = PerlinNoise3D(seed=42)
     test_coords = [
         (0.0,  0.0,  0.0),
@@ -405,7 +405,7 @@ def _test_perlin_bounds() -> None:
 
 
 def _test_perlin_different_seeds_differ() -> None:
-    from math_engine import PerlinNoise3D
+    from Backhand_code.math_engine import PerlinNoise3D
     pn1 = PerlinNoise3D(seed=1)
     pn2 = PerlinNoise3D(seed=2)
     n1  = pn1.noise(0.3, 0.6, 0.9)
@@ -417,7 +417,7 @@ def _test_perlin_different_seeds_differ() -> None:
 
 
 def _test_perlin_smoothness() -> None:
-    from math_engine import PerlinNoise3D
+    from Backhand_code.math_engine import PerlinNoise3D
     # Adjacent samples must not jump discontinuously
     pn = PerlinNoise3D(seed=7)
     step = 0.01
@@ -436,7 +436,7 @@ def _test_perlin_smoothness() -> None:
 
 
 def _test_perlin_zero_at_integers() -> None:
-    from math_engine import PerlinNoise3D
+    from Backhand_code.math_engine import PerlinNoise3D
     # Classic Perlin noise produces zero at integer lattice points
     # (within floating-point precision)
     pn = PerlinNoise3D(seed=0)
@@ -460,8 +460,8 @@ def _test_perlin_zero_at_integers() -> None:
 # =============================================================================
 
 def _test_fbm_elevation_bounds() -> None:
-    from math_engine import PerlinNoise3D, fbm_elevation
-    from config import (
+    from Backhand_code.math_engine import PerlinNoise3D, fbm_elevation
+    from Backhand_code.config import (
         FBM_OCTAVES, FBM_PERSISTENCE, FBM_LACUNARITY, FBM_BASE_AMPLITUDE
     )
     pn = PerlinNoise3D(seed=99)
@@ -481,8 +481,8 @@ def _test_fbm_elevation_bounds() -> None:
 
 
 def _test_fbm_deterministic() -> None:
-    from math_engine import PerlinNoise3D, fbm_elevation
-    from config import (
+    from Backhand_code.math_engine import PerlinNoise3D, fbm_elevation
+    from Backhand_code.config import (
         FBM_OCTAVES, FBM_PERSISTENCE, FBM_LACUNARITY, FBM_BASE_AMPLITUDE
     )
     pn = PerlinNoise3D(seed=42)
@@ -500,8 +500,8 @@ def _test_fbm_deterministic() -> None:
 
 
 def _test_fbm_time_offset_changes_result() -> None:
-    from math_engine import PerlinNoise3D, fbm_elevation
-    from config import (
+    from Backhand_code.math_engine import PerlinNoise3D, fbm_elevation
+    from Backhand_code.config import (
         FBM_OCTAVES, FBM_PERSISTENCE, FBM_LACUNARITY, FBM_BASE_AMPLITUDE
     )
     pn = PerlinNoise3D(seed=42)
@@ -524,7 +524,7 @@ def _test_fbm_time_offset_changes_result() -> None:
 # =============================================================================
 
 def _test_catmull_rom_boundary_values() -> None:
-    from math_engine import catmull_rom
+    from Backhand_code.math_engine import catmull_rom
     p0 = (0.0, 0.0)
     p1 = (1.0, 1.0)
     p2 = (2.0, 0.0)
@@ -542,7 +542,7 @@ def _test_catmull_rom_boundary_values() -> None:
 
 
 def _test_catmull_rom_midpoint() -> None:
-    from math_engine import catmull_rom
+    from Backhand_code.math_engine import catmull_rom
     # For symmetric control points, midpoint should lie on the curve smoothly
     p0 = (0.0,  0.0)
     p1 = (1.0,  0.0)
@@ -559,7 +559,7 @@ def _test_catmull_rom_midpoint() -> None:
 
 
 def _test_catmull_rom_chain_length() -> None:
-    from math_engine import catmull_rom_chain
+    from Backhand_code.math_engine import catmull_rom_chain
     # Chain with 5 control points must produce a dense smooth curve
     points = [(float(i), float(i % 2)) for i in range(5)]
     result = catmull_rom_chain(points, segments_per_span=10)
@@ -570,7 +570,7 @@ def _test_catmull_rom_chain_length() -> None:
 
 
 def _test_catmull_rom_clamp_t() -> None:
-    from math_engine import catmull_rom
+    from Backhand_code.math_engine import catmull_rom
     # t values outside [0, 1] must be clamped, not crash
     p0 = (0.0, 0.0)
     p1 = (1.0, 1.0)
@@ -588,8 +588,8 @@ def _test_catmull_rom_clamp_t() -> None:
 # =============================================================================
 
 def _test_ekg_sample_bounds() -> None:
-    from math_engine import ekg_sample
-    from config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
+    from Backhand_code.math_engine import ekg_sample
+    from Backhand_code.config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
     # Sample across multiple full cycles — must stay within amplitude bounds
     max_abs = 0.0
     for i in range(200):
@@ -604,7 +604,7 @@ def _test_ekg_sample_bounds() -> None:
 
 
 def _test_ekg_sample_periodic() -> None:
-    from math_engine import ekg_sample
+    from Backhand_code.math_engine import ekg_sample
     # Samples at same phase in different cycles must be identical
     cycle = 2.0
     t1 = 0.35   # QRS peak
@@ -617,8 +617,8 @@ def _test_ekg_sample_periodic() -> None:
 
 
 def _test_ekg_generate_points_count() -> None:
-    from math_engine import generate_ekg_points
-    from config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
+    from Backhand_code.math_engine import generate_ekg_points
+    from Backhand_code.config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
     points = generate_ekg_points(
         elapsed=5.0,
         cycle_duration=EKG_CYCLE_DURATION,
@@ -634,8 +634,8 @@ def _test_ekg_generate_points_count() -> None:
 
 
 def _test_ekg_generate_points_screen_x_range() -> None:
-    from math_engine import generate_ekg_points
-    from config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
+    from Backhand_code.math_engine import generate_ekg_points
+    from Backhand_code.config import EKG_CYCLE_DURATION, EKG_AMPLITUDE
     points = generate_ekg_points(
         elapsed=1.0,
         cycle_duration=EKG_CYCLE_DURATION,
@@ -656,7 +656,7 @@ def _test_ekg_generate_points_screen_x_range() -> None:
 # =============================================================================
 
 def _test_ring_buffer_basic_push_latest() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=5)
     for i in range(1, 6):
         rb.push(float(i))
@@ -664,7 +664,7 @@ def _test_ring_buffer_basic_push_latest() -> None:
 
 
 def _test_ring_buffer_capacity_enforcement() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=5)
     for i in range(10):
         rb.push(float(i))
@@ -674,7 +674,7 @@ def _test_ring_buffer_capacity_enforcement() -> None:
 
 
 def _test_ring_buffer_fifo_order() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=5)
     for i in range(10):
         rb.push(float(i))
@@ -686,7 +686,7 @@ def _test_ring_buffer_fifo_order() -> None:
 
 
 def _test_ring_buffer_average() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=4)
     for v in [2.0, 4.0, 6.0, 8.0]:
         rb.push(v)
@@ -696,7 +696,7 @@ def _test_ring_buffer_average() -> None:
 
 
 def _test_ring_buffer_empty_behaviors() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=10)
     assert rb.latest()  == 0.0, f"Empty latest should be 0.0"
     assert rb.average() == 0.0, f"Empty average should be 0.0"
@@ -706,7 +706,7 @@ def _test_ring_buffer_empty_behaviors() -> None:
 
 
 def _test_ring_buffer_thread_safety() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb      = RingBuffer(capacity=1000)
     errors  = []
 
@@ -732,7 +732,7 @@ def _test_ring_buffer_thread_safety() -> None:
 
 
 def _test_ring_buffer_is_full() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=3)
     assert not rb.is_full(), "Empty buffer should not be full"
     rb.push(1.0)
@@ -743,7 +743,7 @@ def _test_ring_buffer_is_full() -> None:
 
 
 def _test_ring_buffer_clear() -> None:
-    from state import RingBuffer
+    from Backhand_code.state import RingBuffer
     rb = RingBuffer(capacity=5)
     for i in range(5):
         rb.push(float(i))
@@ -757,7 +757,7 @@ def _test_ring_buffer_clear() -> None:
 # =============================================================================
 
 def _test_fibonacci_sphere_count() -> None:
-    from math_engine import fibonacci_sphere_points
+    from Backhand_code.math_engine import fibonacci_sphere_points
     points = fibonacci_sphere_points(320, radius=1.0)
     assert len(points) == 320, (
         f"Expected 320 sphere points, got {len(points)}"
@@ -765,7 +765,7 @@ def _test_fibonacci_sphere_count() -> None:
 
 
 def _test_fibonacci_sphere_on_surface() -> None:
-    from math_engine import fibonacci_sphere_points
+    from Backhand_code.math_engine import fibonacci_sphere_points
     points = fibonacci_sphere_points(100, radius=1.0)
     for p in points:
         mag = p.length()
@@ -775,7 +775,7 @@ def _test_fibonacci_sphere_on_surface() -> None:
 
 
 def _test_fibonacci_sphere_radius_scaling() -> None:
-    from math_engine import fibonacci_sphere_points
+    from Backhand_code.math_engine import fibonacci_sphere_points
     r = 80.0
     points = fibonacci_sphere_points(50, radius=r)
     for p in points:
@@ -786,7 +786,7 @@ def _test_fibonacci_sphere_radius_scaling() -> None:
 
 
 def _test_fibonacci_sphere_no_duplicates() -> None:
-    from math_engine import fibonacci_sphere_points
+    from Backhand_code.math_engine import fibonacci_sphere_points
     points = fibonacci_sphere_points(50, radius=1.0)
     tuples = [p.to_tuple() for p in points]
     unique = set((round(x,8), round(y,8), round(z,8)) for x,y,z in tuples)
@@ -801,7 +801,7 @@ def _test_fibonacci_sphere_no_duplicates() -> None:
 # =============================================================================
 
 def _test_latlon_north_pole() -> None:
-    from math_engine import latlon_to_sphere
+    from Backhand_code.math_engine import latlon_to_sphere
     # North pole (90, 0) should map to (0, r, 0) — top of sphere
     p = latlon_to_sphere(90.0, 0.0, radius=1.0)
     assert abs(p.x - 0.0) < 1e-9, f"x: {p.x}"
@@ -810,7 +810,7 @@ def _test_latlon_north_pole() -> None:
 
 
 def _test_latlon_equator_prime_meridian() -> None:
-    from math_engine import latlon_to_sphere
+    from Backhand_code.math_engine import latlon_to_sphere
     # (0, 0) equator prime meridian should map to (r, 0, 0)
     p = latlon_to_sphere(0.0, 0.0, radius=1.0)
     assert abs(p.x - 1.0) < 1e-9, f"x: {p.x}"
@@ -819,7 +819,7 @@ def _test_latlon_equator_prime_meridian() -> None:
 
 
 def _test_latlon_south_pole() -> None:
-    from math_engine import latlon_to_sphere
+    from Backhand_code.math_engine import latlon_to_sphere
     # South pole (-90, 0) should map to (0, -r, 0)
     p = latlon_to_sphere(-90.0, 0.0, radius=1.0)
     assert abs(p.x -  0.0) < 1e-9, f"x: {p.x}"
@@ -828,7 +828,7 @@ def _test_latlon_south_pole() -> None:
 
 
 def _test_latlon_point_on_sphere() -> None:
-    from math_engine import latlon_to_sphere
+    from Backhand_code.math_engine import latlon_to_sphere
     # Any lat/lon point must lie on the unit sphere surface
     test_coords = [
         (51.5,    -0.1),    # London
@@ -851,7 +851,7 @@ def _test_latlon_point_on_sphere() -> None:
 # =============================================================================
 
 def _test_fft_normalize_output_count() -> None:
-    from math_engine import normalize_fft
+    from Backhand_code.math_engine import normalize_fft
     raw = [float(i) for i in range(512)]
     result = normalize_fft(raw, 64)
     assert len(result) == 64, (
@@ -860,7 +860,7 @@ def _test_fft_normalize_output_count() -> None:
 
 
 def _test_fft_normalize_bounds() -> None:
-    from math_engine import normalize_fft
+    from Backhand_code.math_engine import normalize_fft
     raw = [float(i % 10) for i in range(512)]
     result = normalize_fft(raw, 64)
     for i, v in enumerate(result):
@@ -870,7 +870,7 @@ def _test_fft_normalize_bounds() -> None:
 
 
 def _test_fft_normalize_all_zero_input() -> None:
-    from math_engine import normalize_fft
+    from Backhand_code.math_engine import normalize_fft
     raw = [0.0] * 512
     result = normalize_fft(raw, 64)
     for v in result:
@@ -878,7 +878,7 @@ def _test_fft_normalize_all_zero_input() -> None:
 
 
 def _test_fft_normalize_empty_input() -> None:
-    from math_engine import normalize_fft
+    from Backhand_code.math_engine import normalize_fft
     result = normalize_fft([], 64)
     assert len(result) == 64, "Empty input should still return 64 bands"
     assert all(v == 0.0 for v in result), (
@@ -887,7 +887,7 @@ def _test_fft_normalize_empty_input() -> None:
 
 
 def _test_fft_normalize_max_band_is_one() -> None:
-    from math_engine import normalize_fft
+    from Backhand_code.math_engine import normalize_fft
     # If input has a clear peak, the normalized max must be exactly 1.0
     raw = [0.0] * 512
     raw[100] = 100.0   # clear dominant peak
@@ -902,7 +902,7 @@ def _test_fft_normalize_max_band_is_one() -> None:
 # =============================================================================
 
 def _test_stability_perfect_conditions() -> None:
-    from math_engine import stability_score
+    from Backhand_code.math_engine import stability_score
     score = stability_score(
         cpu_temp=35.0,
         cpu_usage=10.0,
@@ -916,7 +916,7 @@ def _test_stability_perfect_conditions() -> None:
 
 
 def _test_stability_critical_conditions() -> None:
-    from math_engine import stability_score
+    from Backhand_code.math_engine import stability_score
     score = stability_score(
         cpu_temp=95.0,
         cpu_usage=100.0,
@@ -930,7 +930,7 @@ def _test_stability_critical_conditions() -> None:
 
 
 def _test_stability_clamped_to_zero() -> None:
-    from math_engine import stability_score
+    from Backhand_code.math_engine import stability_score
     score = stability_score(
         cpu_temp=200.0,
         cpu_usage=100.0,
@@ -942,7 +942,7 @@ def _test_stability_clamped_to_zero() -> None:
 
 
 def _test_stability_network_down_penalty() -> None:
-    from math_engine import stability_score
+    from Backhand_code.math_engine import stability_score
     # Network down vs up should differ by exactly 10 points
     score_up   = stability_score(40.0, 20.0, 40.0, 30.0, True)
     score_down = stability_score(40.0, 20.0, 40.0, 30.0, False)
@@ -956,7 +956,7 @@ def _test_stability_network_down_penalty() -> None:
 # =============================================================================
 
 def _test_slerp_t0_returns_p1() -> None:
-    from math_engine import great_circle_interpolate, Vector3
+    from Backhand_code.math_engine import great_circle_interpolate, Vector3
     p1 = Vector3(1.0, 0.0, 0.0)
     p2 = Vector3(0.0, 1.0, 0.0)
     result = great_circle_interpolate(p1, p2, 0.0)
@@ -965,7 +965,7 @@ def _test_slerp_t0_returns_p1() -> None:
 
 
 def _test_slerp_t1_returns_p2() -> None:
-    from math_engine import great_circle_interpolate, Vector3
+    from Backhand_code.math_engine import great_circle_interpolate, Vector3
     p1 = Vector3(1.0, 0.0, 0.0)
     p2 = Vector3(0.0, 1.0, 0.0)
     result = great_circle_interpolate(p1, p2, 1.0)
@@ -974,7 +974,7 @@ def _test_slerp_t1_returns_p2() -> None:
 
 
 def _test_slerp_midpoint_on_sphere() -> None:
-    from math_engine import great_circle_interpolate, Vector3
+    from Backhand_code.math_engine import great_circle_interpolate, Vector3
     p1 = Vector3(1.0, 0.0, 0.0)
     p2 = Vector3(0.0, 1.0, 0.0)
     mid = great_circle_interpolate(p1, p2, 0.5)
@@ -985,7 +985,7 @@ def _test_slerp_midpoint_on_sphere() -> None:
 
 
 def _test_slerp_parallel_vectors_no_crash() -> None:
-    from math_engine import great_circle_interpolate, Vector3
+    from Backhand_code.math_engine import great_circle_interpolate, Vector3
     # Parallel vectors: omega ≈ 0, should fall back to lerp without crash
     p1 = Vector3(1.0, 0.0, 0.0)
     p2 = Vector3(1.0, 0.0, 0.0)
@@ -1000,7 +1000,7 @@ def _test_slerp_parallel_vectors_no_crash() -> None:
 # =============================================================================
 
 def _test_palette_mix_midpoint() -> None:
-    import palette
+    import Backhand_code.palette as palette
     a = (0, 0, 0)
     b = (200, 100, 50)
     mid = palette.mix(a, b, 0.5)
@@ -1010,7 +1010,7 @@ def _test_palette_mix_midpoint() -> None:
 
 
 def _test_palette_mix_clamp() -> None:
-    import palette
+    import Backhand_code.palette as palette
     # t > 1.0 should clamp to 1.0
     result = palette.mix((0, 0, 0), (100, 100, 100), 2.0)
     assert result == (100, 100, 100), f"Expected (100,100,100), got {result}"
@@ -1020,7 +1020,7 @@ def _test_palette_mix_clamp() -> None:
 
 
 def _test_palette_with_alpha() -> None:
-    import palette
+    import Backhand_code.palette as palette
     result = palette.with_alpha((100, 150, 200), 128)
     assert len(result) == 4, f"Expected 4-tuple, got {result}"
     assert result[3] == 128, f"Alpha: {result[3]}"
@@ -1030,7 +1030,7 @@ def _test_palette_with_alpha() -> None:
 
 
 def _test_palette_depth_shade() -> None:
-    import palette
+    import Backhand_code.palette as palette
     near = (200, 200, 200)
     far  = (30,  30,  30)
     # At depth_t=0.0, result should equal near
@@ -1042,7 +1042,7 @@ def _test_palette_depth_shade() -> None:
 
 
 def _test_palette_brightness() -> None:
-    import palette
+    import Backhand_code.palette as palette
     c = (100, 100, 100)
     doubled = palette.brightness(c, 2.0)
     assert doubled == (200, 200, 200), f"Expected (200,200,200): {doubled}"
@@ -1051,8 +1051,8 @@ def _test_palette_brightness() -> None:
 
 
 def _test_palette_mode_switching() -> None:
-    import palette
-    from config import UIMode
+    import Backhand_code.palette as palette
+    from Backhand_code.config import UIMode
     # Switch to Hudson mode and confirm accent color changes
     palette.set_mode(UIMode.HUDSON)
     # Force complete transition
@@ -1069,7 +1069,7 @@ def _test_palette_mode_switching() -> None:
 
 
 def _test_palette_pulse_finite() -> None:
-    import palette
+    import Backhand_code.palette as palette
     # Pulse must always return finite RGB values
     for t in [0.0, 0.25, 0.5, 0.75, 1.0, 2.5, 10.0]:
         result = palette.pulse((100, 150, 200), t)
@@ -1086,7 +1086,7 @@ def _test_palette_pulse_finite() -> None:
 # =============================================================================
 
 def _test_state_set_get() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s = HermesState()
     s.set("cpu_temp", 72.5)
     assert s.get("cpu_temp") == 72.5, (
@@ -1095,7 +1095,7 @@ def _test_state_set_get() -> None:
 
 
 def _test_state_batch_set() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s = HermesState()
     s.batch_set({
         "cpu_temp":   55.0,
@@ -1108,7 +1108,7 @@ def _test_state_batch_set() -> None:
 
 
 def _test_state_snapshot_is_copy() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s    = HermesState()
     snap = s.snapshot()
     # Modifying the snapshot must not affect the state
@@ -1119,7 +1119,7 @@ def _test_state_snapshot_is_copy() -> None:
 
 
 def _test_state_concurrent_writes() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s      = HermesState()
     errors = []
 
@@ -1142,7 +1142,7 @@ def _test_state_concurrent_writes() -> None:
 
 
 def _test_state_append_to_capped() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s = HermesState()
     for i in range(20):
         s.append_to("system_alerts", f"alert_{i}", max_length=5)
@@ -1151,7 +1151,7 @@ def _test_state_append_to_capped() -> None:
 
 
 def _test_state_uptime_string_format() -> None:
-    from state import HermesState
+    from Backhand_code.state import HermesState
     s = HermesState()
     uptime = s.get_uptime_string()
     # Must match "UP: HH:MM:SS" format
@@ -1163,7 +1163,7 @@ def _test_state_uptime_string_format() -> None:
 
 
 def _test_state_unread_count() -> None:
-    from state import HermesState, SocialMessage
+    from Backhand_code.state import HermesState, SocialMessage
     s = HermesState()
     msg1 = SocialMessage(
         platform=SocialMessage.PLATFORM_WHATSAPP,
@@ -1189,7 +1189,7 @@ def _test_state_unread_count() -> None:
 # =============================================================================
 
 def _test_event_bus_publish_subscribe() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus      = EventBus()
     bus.start()
     received = []
@@ -1208,7 +1208,7 @@ def _test_event_bus_publish_subscribe() -> None:
 
 
 def _test_event_bus_unsubscribe() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus      = EventBus()
     bus.start()
     received = []
@@ -1232,7 +1232,7 @@ def _test_event_bus_unsubscribe() -> None:
 
 
 def _test_event_bus_main_thread_poll() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus = EventBus()
     bus.start()
     bus.publish(
@@ -1249,7 +1249,7 @@ def _test_event_bus_main_thread_poll() -> None:
 
 
 def _test_event_bus_priority_ordering() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus   = EventBus()
     bus.start()
     order = []
@@ -1274,7 +1274,7 @@ def _test_event_bus_priority_ordering() -> None:
 
 
 def _test_event_bus_stats() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus = EventBus()
     bus.start()
     bus.publish(EventType.HARDWARE_UPDATE, source="Test")
@@ -1288,7 +1288,7 @@ def _test_event_bus_stats() -> None:
 
 
 def _test_event_bus_source_filter() -> None:
-    from event_bus import EventBus, EventType
+    from Backhand_code.event_bus import EventBus, EventType
     bus      = EventBus()
     bus.start()
     received = []
@@ -1317,7 +1317,7 @@ def _test_event_bus_source_filter() -> None:
 # =============================================================================
 
 def _test_config_directory_existence() -> None:
-    from config import (
+    from Backhand_code.config import (
         ASSETS_DIR, SOUNDS_DIR, MEMORY_DIR,
         BRAINSTORM_DIR, BASE_DIR,
     )
@@ -1328,14 +1328,14 @@ def _test_config_directory_existence() -> None:
 
 
 def _test_config_screen_dimensions() -> None:
-    from config import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_SIZE
+    from Backhand_code.config import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_SIZE
     assert SCREEN_WIDTH  == 1920, f"Expected width 1920, got {SCREEN_WIDTH}"
     assert SCREEN_HEIGHT == 810,  f"Expected height 810, got {SCREEN_HEIGHT}"
     assert SCREEN_SIZE   == (1920, 810), f"SCREEN_SIZE mismatch: {SCREEN_SIZE}"
 
 
 def _test_config_panel_geometry_consistency() -> None:
-    from config import (
+    from Backhand_code.config import (
         LEFT_VP_X,  LEFT_VP_W,  RIGHT_TOP_X,
         BOTTOM_ROW_Y, HEADER_BOTTOM, LEFT_VP_BOTTOM,
         PANEL_E1_W, PANEL_E2_W, PANEL_E3_W, PANEL_E4_W,
@@ -1360,19 +1360,19 @@ def _test_config_panel_geometry_consistency() -> None:
 
 
 def _test_config_fps_cap() -> None:
-    from config import FPS_CAP
+    from Backhand_code.config import FPS_CAP
     assert FPS_CAP == 60, f"Expected FPS_CAP=60, got {FPS_CAP}"
 
 
 def _test_config_api_key_not_empty() -> None:
-    from config import OPENROUTER_API_KEY
+    from Backhand_code.config import OPENROUTER_API_KEY
     assert len(OPENROUTER_API_KEY) > 10, (
         "OPENROUTER_API_KEY appears to be empty or placeholder"
     )
 
 
 def _test_config_performance_tier_maps_complete() -> None:
-    from config import PerformanceTier
+    from Backhand_code.config import PerformanceTier
     tiers = [
         PerformanceTier.CRAPPY,
         PerformanceTier.MEH,
@@ -1400,7 +1400,7 @@ def _test_config_performance_tier_maps_complete() -> None:
 # =============================================================================
 
 def _test_token_tracker_basic() -> None:
-    from state import SessionTokenTracker
+    from Backhand_code.state import SessionTokenTracker
     tracker = SessionTokenTracker(limit=100)
     # 40 characters = ~10 tokens
     exceeded = tracker.add_text("a" * 40)
@@ -1409,7 +1409,7 @@ def _test_token_tracker_basic() -> None:
 
 
 def _test_token_tracker_exceeds() -> None:
-    from state import SessionTokenTracker
+    from Backhand_code.state import SessionTokenTracker
     tracker = SessionTokenTracker(limit=10)
     # 80 characters = 20 tokens — must exceed limit of 10
     exceeded = tracker.add_text("x" * 80)
@@ -1417,7 +1417,7 @@ def _test_token_tracker_exceeds() -> None:
 
 
 def _test_token_tracker_reset() -> None:
-    from state import SessionTokenTracker
+    from Backhand_code.state import SessionTokenTracker
     tracker = SessionTokenTracker(limit=10)
     tracker.add_text("x" * 80)
     tracker.reset()
@@ -1427,7 +1427,7 @@ def _test_token_tracker_reset() -> None:
 
 
 def _test_token_tracker_percentage() -> None:
-    from state import SessionTokenTracker
+    from Backhand_code.state import SessionTokenTracker
     tracker = SessionTokenTracker(limit=100)
     # 200 chars = 50 tokens = 50%
     tracker.add_text("a" * 200)
@@ -1442,21 +1442,21 @@ def _test_token_tracker_percentage() -> None:
 # =============================================================================
 
 def _test_clamp() -> None:
-    from math_engine import clamp
+    from Backhand_code.math_engine import clamp
     assert clamp(5.0,  0.0, 10.0) == 5.0
     assert clamp(-1.0, 0.0, 10.0) == 0.0
     assert clamp(15.0, 0.0, 10.0) == 10.0
 
 
 def _test_lerp_scalar() -> None:
-    from math_engine import lerp
+    from Backhand_code.math_engine import lerp
     assert abs(lerp(0.0, 100.0, 0.5) - 50.0) < 1e-9
     assert abs(lerp(0.0, 100.0, 0.0) -  0.0) < 1e-9
     assert abs(lerp(0.0, 100.0, 1.0) - 100.0) < 1e-9
 
 
 def _test_smoothstep() -> None:
-    from math_engine import smoothstep
+    from Backhand_code.math_engine import smoothstep
     assert smoothstep(0.0, 1.0, 0.0) == 0.0
     assert smoothstep(0.0, 1.0, 1.0) == 1.0
     mid = smoothstep(0.0, 1.0, 0.5)
@@ -1467,14 +1467,14 @@ def _test_smoothstep() -> None:
 
 
 def _test_map_range() -> None:
-    from math_engine import map_range
+    from Backhand_code.math_engine import map_range
     # Map [0, 10] → [0, 100]: value 5 → 50
     result = map_range(5.0, 0.0, 10.0, 0.0, 100.0)
     assert abs(result - 50.0) < 1e-9, f"map_range: {result}"
 
 
 def _test_compute_rms() -> None:
-    from math_engine import compute_rms
+    from Backhand_code.math_engine import compute_rms
     # RMS of [1, 1, 1, 1] = 1.0
     assert abs(compute_rms([1.0, 1.0, 1.0, 1.0]) - 1.0) < 1e-9
     # RMS of empty = 0.0
@@ -1484,7 +1484,7 @@ def _test_compute_rms() -> None:
 
 
 def _test_semicircle_arc_right() -> None:
-    from math_engine import semicircle_arc_point
+    from Backhand_code.math_engine import semicircle_arc_point
     # At angle_deg=0 (right side, 100% stable):
     # angle_rad = pi - 0 = pi → cos(pi)=-1, sin(pi)=0
     # x = cx + r * cos(pi) = cx - r
@@ -1496,7 +1496,7 @@ def _test_semicircle_arc_right() -> None:
 
 
 def _test_semicircle_arc_top() -> None:
-    from math_engine import semicircle_arc_point
+    from Backhand_code.math_engine import semicircle_arc_point
     # At angle_deg=90 (top, 50% stable):
     # angle_rad = pi - pi/2 = pi/2 → cos(pi/2)=0, sin(pi/2)=1
     # x = cx + r * 0 = cx
@@ -1508,7 +1508,7 @@ def _test_semicircle_arc_top() -> None:
 
 
 def _test_terrain_grid_generator() -> None:
-    from math_engine import generate_terrain_grid
+    from Backhand_code.math_engine import generate_terrain_grid
     density = 10
     spacing = 18.0
     grid    = generate_terrain_grid(density, spacing)
