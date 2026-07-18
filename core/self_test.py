@@ -124,7 +124,7 @@ def _run_test(name: str, fn) -> TestResult:
 # =============================================================================
 
 def _test_vector3_addition() -> None:
-    from Backhand_code.math_engine import Vector3
+    from core.math_engine import Vector3
     v1 = Vector3(1.0, 2.0, 3.0)
     v2 = Vector3(4.0, 5.0, 6.0)
     result = v1 + v2

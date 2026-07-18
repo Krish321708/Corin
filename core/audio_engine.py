@@ -36,7 +36,7 @@ try:
 except ImportError:
     NUMPY_AVAILABLE: bool = False
 
-from Backhand_code.config import (
+from core.config import (
     SOUND_ACCESS_GRANTED,
     SOUND_THINKING_MACHINE,
     SOUND_DEEP_SPACE_PING,

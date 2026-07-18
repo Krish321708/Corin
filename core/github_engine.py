@@ -25,7 +25,7 @@ try:
 except ImportError:
     REQUESTS_AVAILABLE: bool = False
 
-from Backhand_code.config import (
+from core.config import (
     GITHUB_API_BASE,
     GITHUB_TOKEN_PLACEHOLDER,
     GITHUB_MIN_ANALYSIS_SECONDS,

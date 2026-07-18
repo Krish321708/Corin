@@ -12,15 +12,17 @@ import time
 import traceback
 from typing import Dict, Optional, Tuple, Any
 
-# Core system imports (from Backhand_code folder)
-from Backhand_code.config import Config
-from Backhand_code.palette import Palette
-from Backhand_code.state import HermesState
-from Backhand_code.event_bus import EventBus
-from Backhand_code.self_test import run_self_tests
-from Backhand_code.daemons import DaemonManager
-from Backhand_code.ui_widgets import initialize_widgets
-from Backhand_code.ui_panels import initialize_panels
+# Core system imports (from core folder)
+from core.config import Config
+from core.palette import Palette
+from core.state import HermesState
+from core.event_bus import EventBus
+from core.self_test import run_self_tests
+from core.daemons import DaemonManager
+from core.ui_widgets import initialize_widgets
+from core.ui_panels import initialize_panels
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Pygame imports
 try:

@@ -20,9 +20,9 @@ import sqlite3
 import os
 
 # Core system imports
-from Backhand_code.config import Config
-from Backhand_code.state import HermesState
-from Backhand_code.event_bus import EventBus
+from core.config import Config
+from core.state import HermesState
+from core.event_bus import EventBus
 
 # External libraries
 try:

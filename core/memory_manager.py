@@ -17,7 +17,7 @@ import threading
 import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
-from Backhand_code.config import (
+from core.config import (
     ARCHER_SOUL_PATH,
     HUDSON_SOUL_PATH,
     USERS_MD_PATH,

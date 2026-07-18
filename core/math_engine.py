@@ -1563,7 +1563,7 @@ def generate_orb_particles(
     Returns:
         List of OrbParticle instances ready for update/draw loops.
     """
-    from Backhand_code.config import UIMode
+    from core.config import UIMode
     rng = random.Random(42)   # seeded for consistent initial layout
     particles: List[OrbParticle] = []
 
