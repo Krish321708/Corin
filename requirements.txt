@@ -1,0 +1,8 @@
+pygame
+numpy
+psutil
+requests
+beautifulsoup4
+lxml
+sounddevice
+pyttsx3
