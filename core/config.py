@@ -210,6 +210,109 @@ USERS_MD_PATH = Config.USERS_FILE
 SESSION_TOKEN_LIMIT = Config.MEMORY_TOKEN_LIMIT
 FFT_BANDS = Config.AUDIO_FFT_BANDS
 
+# Screen constants
+SCREEN_WIDTH = Config.SCREEN_WIDTH
+SCREEN_HEIGHT = Config.SCREEN_HEIGHT
+SCREEN_SIZE = (Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT)
+FPS_CAP = Config.TARGET_FPS
+
+# Audio constants
+SOUND_ACCESS_GRANTED = Config.SOUND_ACCESS_GRANTED
+SOUND_THINKING_MACHINE = Config.SOUND_THINKING_MACHINE
+SOUND_DEEP_SPACE_PING = Config.SOUND_DEEP_SPACE_PING
+SOUND_ALERT_ALARM = Config.SOUND_ALERT_ALARM
+SOUNDS_DIR = Config.SOUNDS_DIRECTORY
+
+# File system constants
+ASSETS_DIR = Config.ASSETS_DIRECTORY
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+
+# Layout geometry constants
+BOTTOM_ROW_Y = Config.BOTTOM_STATUS_Y
+HEADER_BOTTOM = Config.HEADER_HEIGHT
+LEFT_VP_X = 0
+LEFT_VP_W = Config.LEFT_VIEWPORT_WIDTH
+RIGHT_TOP_X = Config.RIGHT_TOP_VIEWPORT_X
+LEFT_VP_BOTTOM = Config.HEADER_HEIGHT + Config.LEFT_VIEWPORT_HEIGHT
+PANEL_E1_W = PANEL_E2_W = PANEL_E3_W = PANEL_E4_W = Config.SCREEN_WIDTH // 4
+
+# Terrain and signal constants
+FBM_OCTAVES = 5
+FBM_PERSISTENCE = Config.TERRAIN_PERSISTENCE
+FBM_LACUNARITY = Config.TERRAIN_LACUNARITY
+FBM_BASE_AMPLITUDE = 100.0
+
+OPENROUTER_API_KEY = Config.OPENROUTER_API_KEY
+
+EKG_CYCLE_DURATION = 2.0
+EKG_AMPLITUDE = 40.0
+
+# GitHub constants
+GITHUB_API_BASE = "https://api.github.com"
+GITHUB_TOKEN_PLACEHOLDER = "your_github_token"
+GITHUB_MIN_ANALYSIS_SECONDS = 30
+GITHUB_COMMIT_MESSAGE_PREFIX = "[AutoGPT]"
+GITHUB_MINOR_KEYWORDS = ["enhancement", "feature", "update"]
+GITHUB_HARD_KEYWORDS = ["bug", "fix", "urgent"]
+GITHUB_POLL_RATE = 60
+
+# Memory constants
+MEMORY_DIR = os.path.join("data", "memory")
+BRAINSTORM_DIR = os.path.join("data", "brainstorms")
+REDDIT_PREFS_PATH = os.path.join("data", "reddit_prefs.json")
+MEMORY_MAX_WORDS = 10000
+
+# LLM / routing
+OPENROUTER_CHAT_ENDPOINT = f"{Config.OPENROUTER_BASE_URL}/chat/completions"
+MODEL_CONVERSATION = Config.MAIN_LLM_MODEL
+MODEL_NLP_EXTRACTION = Config.COORDINATE_EXTRACTION_MODEL
+VOICE_CMD_ARCHER = "hey archer"
+VOICE_CMD_HUDSON = "hey hudson"
+VOICE_CMD_BOTH = "hey system"
+
+# Terminal constants
+TERMINAL_MAX_HISTORY = 250
+
+# Performance tiers
+class PerformanceTier:
+    CRAPPY = "crappy"
+    MEH = "meh"
+    MID = "mid"
+    BEAST = "beast"
+    MONSTER = "monster"
+
+    TERRAIN_DENSITY_MAP = {
+        CRAPPY: 10,
+        MEH: 15,
+        MID: 25,
+        BEAST: 35,
+        MONSTER: 50,
+    }
+
+    GLOBE_POINTS_MAP = {
+        CRAPPY: 100,
+        MEH: 200,
+        MID: 400,
+        BEAST: 800,
+        MONSTER: 1600,
+    }
+
+    FPS_MAP = {
+        CRAPPY: 15,
+        MEH: 30,
+        MID: 60,
+        BEAST: 90,
+        MONSTER: 120,
+    }
+
+    ORB_PARTICLE_MAP = {
+        CRAPPY: 50,
+        MEH: 100,
+        MID: 200,
+        BEAST: 400,
+        MONSTER: 800,
+    }
+
 # System information
 SYSTEM_NAME = "HERMES"
 SYSTEM_VERSION = "Omnimind Absolute Edition"

@@ -102,6 +102,19 @@ class HermesApplication:
             print("\n🔧 PHASE 1: CORE SYSTEM VALIDATION")
             
             # Run self-tests first
+            print("   • Ensuring required data directories exist...")
+            required_directories = [
+                os.path.join(PROJECT_ROOT, Config.DATA_DIRECTORY),
+                os.path.join(PROJECT_ROOT, Config.ASSETS_DIRECTORY),
+                os.path.join(PROJECT_ROOT, Config.SOUNDS_DIRECTORY),
+                os.path.join(PROJECT_ROOT, "brainstorming_sessions"),
+                os.path.join(PROJECT_ROOT, Config.DATA_DIRECTORY, "memory"),
+                os.path.join(PROJECT_ROOT, Config.DATA_DIRECTORY, "brainstorms"),
+            ]
+            for directory in required_directories:
+                os.makedirs(directory, exist_ok=True)
+                print(f"   ✓ Directory ensured: {os.path.relpath(directory, PROJECT_ROOT)}")
+
             print("   • Running mathematical validation suite...")
             if not run_self_tests():
                 print("   ✗ Self-tests failed - system integrity compromised")
