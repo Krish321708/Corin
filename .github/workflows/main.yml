@@ -2,25 +2,43 @@ name: Run Corin
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  run:
+  corin:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: ⬆️ Upgrade pip
+        run: python -m pip install --upgrade pip
 
-      - name: Run Corin
+      - name: 📦 Install Python Dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: 🌐 Install Playwright Browsers
+        run: |
+          playwright install --with-deps
+        continue-on-error: true
+
+      - name: 📂 Show Project Structure
+        run: |
+          pwd
+          ls -R
+
+      - name: 🚀 Run Corin
         run: |
           python main.py
