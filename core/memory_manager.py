@@ -1061,7 +1061,7 @@ class MemoryManager:
     File writes are atomic (temp + rename) and protected by per-file locks.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, event_bus=None, state=None) -> None:
         self._archer_lock:  threading.Lock = threading.Lock()
         self._hudson_lock:  threading.Lock = threading.Lock()
         self._users_lock:   threading.Lock = threading.Lock()

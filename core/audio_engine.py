@@ -1261,7 +1261,7 @@ class AudioEngine:
     The main frame loop calls drain_queue() once per frame.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, event_bus=None, state=None) -> None:
         self._initialized:    bool                  = False
         self._muted:          bool                  = False
         self._master_volume:  float                 = VOLUME_MASTER
@@ -1270,6 +1270,10 @@ class AudioEngine:
         self._active_channels: Dict[int, any]       = {}
         self._last_play_time: Dict[int, float]      = {}
         self._debounce_secs:  float                 = 0.05   # 50ms debounce
+
+        # Store references for potential event-driven audio
+        self._event_bus = event_bus
+        self._state = state
 
         # Currently looping alert channel (for stopping alerts)
         self._alert_channel:  Optional[any]         = None
