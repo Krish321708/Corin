@@ -9,7 +9,6 @@ numpy
 playwright
 psutil
 praw
-pyaudio
 pygame
 pyttsx3
 requests
