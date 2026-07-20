@@ -18,7 +18,7 @@ import time
 import traceback
 from collections import defaultdict, deque
 from datetime import datetime, timedelta
-from email.mime.text import MimeText
+from email.mime.text import MIMEText
 from io import BytesIO
 from typing import Dict, List, Optional, Tuple, Any
 import hashlib
@@ -777,7 +777,7 @@ class GmailIntegration:
             # Create reply message
             reply_subject = f"Re: {subject}" if not subject.startswith('Re:') else subject
             
-            reply = MimeText(reply_text)
+            reply = MIMEText(reply_text)
             reply['to'] = sender
             reply['subject'] = reply_subject
             reply['In-Reply-To'] = message_id_header
