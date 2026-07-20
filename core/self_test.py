@@ -34,11 +34,11 @@ def _validate_imports() -> List[str]:
     failures: List[str] = []
 
     modules_to_test = [
-        "config",
-        "palette",
-        "math_engine",
-        "state",
-        "event_bus",
+        "core.config",
+        "core.palette",
+        "core.math_engine",
+        "core.state",
+        "core.event_bus",
     ]
 
     for module_name in modules_to_test:
